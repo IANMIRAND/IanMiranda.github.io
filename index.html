@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=decvice-witdth, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>PROTIFOLIO IAN</title>
+
+</head>
+
+<body>
+    <div class="particulas"></div>
+
+
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Inicio</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contatos</a>
+            </li>
+        </ul>
+
+    </nav>
+
+
+    <main id="inicio" class="cabecalho">
+    
+        <img src="./img/IMG-20250921-WA0036.jpg" alt="Foto ian" class="foto-perfil">
+        <h1>Ian Miranda</h1>
+        <p class="cabecalho-subtitulo">Desenvolvedor Full Stack</p>
+    </main>
+    
+    
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-informacoes">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt eius tempore esse magni, magnam
+                accusantium mollitia quo incidunt ea eligendi inventore odit amet, quisquam libero dolores nihil
+                numquam, unde blanditiis!
+            </p>
+        </div>
+    </section>
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulos">Meus Projetos</h2>
+        <div class="projetos-caixas">
+            <div class="projetos-card">
+                <img src="./img/download (1).jpg" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">teste 1</h3>
+                    <p class="texto-projetos">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam iste
+                        omnis pariatur laudantium quos provident quaerat odio quasi at a harum facere ipsum dolore rem
+                        nam, minima quae repellendus illo?</p>
+                </div>
+            </div>
+    
+            <div class="projetos-card">
+                <img src="./img/download (1).jpg" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">teste 2</h3>
+                    <p class="texto-projetos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+                        fugiat nemo ea maxime ipsum quisquam, quasi eveniet, incidunt accusantium numquam reprehenderit,
+                        eligendi itaque. Esse, reiciendis sed quibusdam cumque laudantium omnis!</p>
+                </div>
+            </div>
+    
+            <div class="projetos-card">
+                <img src="./img/download (1).jpg" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">teste 3</h3>
+                    <p class="texto-projetos">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis harum
+                        earum aperiam dolorum tempore magni, nulla rerum. Velit veritatis voluptatem, cum quod
+                        recusandae consectetur facilis a quam laborum natus quia!</p>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+        <form class="formulario-contato " id="formulario" onsubmit="enviarzap(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+    
+            </div>
+    
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua mensagem" id="mensagem" rows="6"></textarea>
+            </div>
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+    
+        </form>
+    
+    </section>
+    
+    <script>
+        function enviarzap(event){
+        event.preventDefault()
+        const nome = document.getElementById('nome').value;
+        const mensagem = document.getElementById('mensagem').value;
+        const telefone= '5531971855644';
+        const texto= `ola! me chamo ${nome}, ${mensagem}`;
+        const msnFormatada = encodeURIComponent(texto);
+
+        const url = `https://wa.me/${telefone}/?text=${msnFormatada}`;
+
+        window.open(url,'_blank')
+        }
+
+    </script>
+    
+    
+    
+    
+    </body>
+</html>
